@@ -1,3 +1,60 @@
+Instructions:
+
+create the workspace:
+npx create-nx-workspace myworkspace
+
+update nx.json: the npmScope allows us to @workshop/material for example keeping our dependencies nice and clean
+{
+"npmScope": "workshop",
+"implicitDependencies": {
+"angular.json": "_",
+"package.json": "_",
+"tsconfig.json": "_",
+"tslint.json": "_",
+"nx.json": "\*"
+},
+"projects": {
+}
+}
+
+set default scss
+ng config schematics.@nrwl/schematics:component.styleext scss
+
+create the dashboard app
+ng g app dashboard --routing -p=app --style=scss
+
+add angular material
+ng add @angular/material
+
+create one material module for the material components
+ng g lib material
+
+import into material module
+import {
+MatButtonModule,
+MatCardModule,
+MatCheckboxModule,
+MatFormFieldModule,
+MatGridListModule,
+MatIconModule,
+MatInputModule,
+MatListModule,
+MatMenuModule,
+MatSelectModule,
+MatSidenavModule,
+MatSliderModule,
+MatSnackBarModule,
+MatTableModule,
+MatToolbarModule,
+MatButtonToggleModule
+} from '@angular/material';
+import and export them
+
+make it available to application src>app>app module
+
+generate a core data library:
+
+
 # Angular Core Workshop
 
 We are going to use the Angular CLI and NRWL Extensions extensively in the workshop to streamline development and free us up to focus on core concepts.
@@ -7,12 +64,15 @@ Follow the steps below to get started!
 ## The Stack
 
 ### NRWL Workspace
+
 A NRWL workspace contains one or all of you Angular projects and libraries. It creates a monorepo for your applications domains. Nx helps add extra layer of tooling that can help manage your enterprise applications.
 
 ### Angular Material
+
 Angular Material is a UI library for Angular that gives you access to a modern material UI that works across web, mobile, and desktop applications with minimal custom CSS and setup.
 
 ### JSON Server
+
 Creates a quick and simple way to mock out a backend REST service. We can then deliver some mocked out data in JSON format to make sure everything is working as expected once our real backend is connected.
 
 ## Getting Started
