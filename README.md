@@ -53,7 +53,24 @@ import and export them
 make it available to application src>app>app module
 
 generate a core data library:
+ng g lib core-data -d
 
+create shared components libs:
+ng g lib ui-login -p=ui
+ng g lib ui-toolbar -p=ui
+
+generate some components
+--project=dashboard
+
+if this is a feature (are you going to route to this component) generate a module first then put in the component
+ng g m home --routing
+ng g c home
+ng g m projects --routing
+ng g c projects
+import the modules into app module
+
+add app-home to customers component
+export homecomponent from home module
 
 # Angular Core Workshop
 
