@@ -1,6 +1,7 @@
 Instructions:
 
 create the workspace:
+(multiple applications in a single workspace, abstraction layer - libs, apps should be very thin)
 npx create-nx-workspace myworkspace
 
 update nx.json: the npmScope allows us to @workshop/material for example keeping our dependencies nice and clean
@@ -71,6 +72,14 @@ import the modules into app module
 
 add app-home to customers component
 export homecomponent from home module
+
+create a routing module
+
+create login component in ui login lib
+ng g c login --project=ui-login
+export from ui login module
+export login component from index.ts
+import into app module
 
 # Angular Core Workshop
 
